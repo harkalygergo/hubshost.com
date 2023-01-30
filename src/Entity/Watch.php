@@ -14,9 +14,6 @@ class Watch
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column]
-    private ?int $ID = null;
-
     #[ORM\Column(length: 255)]
     private ?string $Brand = null;
 
@@ -41,13 +38,6 @@ class Watch
     public function getId(): ?int
     {
         return $this->id;
-    }
-
-    public function setID(int $ID): self
-    {
-        $this->ID = $ID;
-
-        return $this;
     }
 
     public function getBrand(): ?string

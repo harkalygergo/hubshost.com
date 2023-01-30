@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Watches{% endblock %}
+
+{% block content %}
+
+órák
+
+    <div class="table-responsive">
+        <table class="table align-middle">
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>Brand</th>
+                <th>Model</th>
+                <th>SKU</th>
+                <th>Strap width</th>
+                <th>Official URL</th>
+            </tr>
+            </thead>
+            <tbody>
+                {% for watch in watches %}
+                    <tr>
+                        <td>{{ watch.id }}</td>
+                        <td>{{ watch.brand }}</td>
+                        <td>{{ watch.model }}</td>
+                        <td>{{ watch.SKU }}</td>
+                        <td>{{ watch.StrapWidth }}</td>
+                        <td>
+                            {% if watch.OfficialURL != "" %}
+                                <a target="_blank" href="{{ watch.OfficialURL }}">link ↗</a>
+                            {% endif %}
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+
+{% endblock %}
