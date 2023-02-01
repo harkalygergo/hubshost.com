@@ -4,24 +4,35 @@
 
 {% block content %}
 
-órák
+<style>
+    img.img-fluid {
+        width:50px;
+        border-radius: 50%;
+    }
+</style>
 
-    <div class="table-responsive">
-        <table class="table align-middle">
-            <thead>
-            <tr>
-                <th>#</th>
-                <th>Brand</th>
-                <th>Model</th>
-                <th>SKU</th>
-                <th>Strap width</th>
-                <th>Official URL</th>
-            </tr>
-            </thead>
-            <tbody>
+    <div class="py-5">
+        <h1>Watches</h1>
+        <hr>
+        <div class="table-responsive py-3">
+            <table class="table table-sm table-striped table-hover align-middle">
+                <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Image</th>
+                    <th>Brand</th>
+                    <th>Model</th>
+                    <th>SKU</th>
+                    <th>Strap width</th>
+                    <th>Official URL</th>
+                    <th>adatlap</th>
+                </tr>
+                </thead>
+                <tbody>
                 {% for watch in watches %}
                     <tr>
                         <td>{{ watch.id }}</td>
+                        <td><img class="img-fluid" alt="..." src="https://img.jofogas.hu/hdimages/9_honapos__garancias__full_set_Orient_Sun_and_Moon_3_kek_ajandek_szij_886882218150497.jpg"></td>
                         <td>{{ watch.brand }}</td>
                         <td>{{ watch.model }}</td>
                         <td>{{ watch.SKU }}</td>
@@ -31,11 +42,12 @@
                                 <a target="_blank" href="{{ watch.OfficialURL }}">link ↗</a>
                             {% endif %}
                         </td>
+                        <td><a href="#">👁 adatlap</a></td>
                     </tr>
                 {% endfor %}
-            </tbody>
-        </table>
+                </tbody>
+            </table>
+        </div>
     </div>
-
 
 {% endblock %}
