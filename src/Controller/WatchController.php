@@ -12,7 +12,7 @@ class WatchController extends AbstractController
     #[Route('/watch', name: 'app_watch')]
     public function index(WatchRepository $watchRepository): Response
     {
-        return $this->render('watch/index.html.twig', [
+        return $this->render('datahub/watch/index.html.twig', [
             'controller_name' => 'WatchController',
             'watches' => $watchRepository->findAll(),
         ]);
