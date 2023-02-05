@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Watches{% endblock %}
+
+{% block content %}
+
+    <style>
+        img.img-fluid {
+            width:50px;
+            border-radius: 50%;
+        }
+    </style>
+    <h1>{{ 'company.companies'|trans }}</h1>
+    <hr>
+    <div class="table-responsive py-3">
+        <table class="table table-sm table-striped table-hover align-middle">
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>ZIP</th>
+                <th>City</th>
+                <th>Address</th>
+                <th>VatNumber</th>
+                <th>EuVatNumber</th>
+                <th>Phone</th>
+                <th>Email</th>
+                <th>Website</th>
+                <th>Profession</th>
+                <th>Description</th>
+                <th>Owner</th>
+                <th>adatlap</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for entity in entities %}
+                <tr>
+                    <td>{{ entity.id }}</td>
+                    <td>{{ entity.name }}</td>
+                    <td>{{ entity.ZIP }}</td>
+                    <td>{{ entity.City }}</td>
+                    <td>{{ entity.Address }}</td>
+                    <td>{{ entity.VatNumber }}</td>
+                    <td>{{ entity.EuVatNumber }}</td>
+                    <td>{{ entity.Phone }}</td>
+                    <td>{{ entity.Email }}</td>
+                    <td>{{ entity.Website }}</td>
+                    <td>{{ entity.Profession }}</td>
+                    <td>{{ entity.Description }}</td>
+                    <td>{{ entity.Owner }}</td>
+                    <td><a href="#">👁 adatlap</a></td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+{% endblock %}
