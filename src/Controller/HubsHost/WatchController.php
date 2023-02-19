@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controller;
+namespace App\Controller\HubsHost;
 
 use App\Repository\WatchRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -12,7 +12,7 @@ class WatchController extends AbstractController
     #[Route('/watch', name: 'app_watch')]
     public function index(WatchRepository $watchRepository): Response
     {
-        return $this->render('datahub/watch/index.html.twig', [
+        return $this->render('hubshost.com/datahub/watch/index.html.twig', [
             'controller_name' => 'WatchController',
             'watches' => $watchRepository->findAll(),
         ]);
